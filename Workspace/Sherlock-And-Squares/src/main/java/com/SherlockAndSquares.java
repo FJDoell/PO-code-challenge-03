@@ -3,12 +3,14 @@ package com;
 public class SherlockAndSquares {
 
 	/**
+	 * DEPRECATED: Use findPerfectSquaresFast()<br>
 	 * Given two numbers, find the number of perfect squares between them.
 	 * 
 	 * @param a
 	 * @param b
 	 * @return
 	 */
+	@Deprecated
 	public long findPerfectSquares(long a, long b) {
 		long result = 0;
 		// If a is higher than b, switch them
@@ -60,6 +62,12 @@ public class SherlockAndSquares {
 			a = b;
 			b = swap;
 		}
+		if(a < 0 && b < 0)
+			return 0;
+		if(a < 0)
+			a = 0;
+		if(b < 0)
+			b = 0;
 		double squareA = Math.ceil(Math.sqrt((double) a));
 		double squareB = Math.floor(Math.sqrt((double) b));
 		result = (long) (squareB - squareA) + 1;

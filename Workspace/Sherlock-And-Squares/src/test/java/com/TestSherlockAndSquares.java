@@ -121,4 +121,37 @@ class TestSherlockAndSquares {
 		assertEquals(expected, result, "FAST: between 49 and 24 (backwards order)");
 	}
 	
+	@Test
+	void testFastSix() {
+		long testFastNumOne = 16;
+		long testFastNumTwo = 80;
+		
+		long expected = 5;
+		long result = sherlockServ.findPerfectSquaresFast(testFastNumOne, testFastNumTwo);
+		
+		assertEquals(expected, result, "FAST: between 16 and 80");
+	}
+	
+	@Test
+	void testFastSeven() {
+		long testFastNumOne = -16;
+		long testFastNumTwo = 80;
+		
+		long expected = 9;
+		long result = sherlockServ.findPerfectSquaresFast(testFastNumOne, testFastNumTwo);
+		
+		assertEquals(expected, result, "FAST: between -16 and 80");
+	}
+	
+	@Test
+	void testFastEight() {
+		long testFastNumOne = -16;
+		long testFastNumTwo = -80;
+		
+		long expected = 0;
+		long result = sherlockServ.findPerfectSquaresFast(testFastNumOne, testFastNumTwo);
+		
+		assertEquals(expected, result, "FAST: between -16 and -80");
+	}
+	
 }
